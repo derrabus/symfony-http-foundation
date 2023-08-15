@@ -1962,7 +1962,7 @@ class Request
      */
     private function getUrlencodedPrefix(string $string, string $prefix): ?string
     {
-        if (!str_starts_with(rawurldecode($string), $prefix)) {
+        if (stripos(rawurldecode($string), $prefix) !== 0) {
             return null;
         }
 
